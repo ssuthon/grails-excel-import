@@ -11,6 +11,7 @@ grails.project.dependency.resolution = {
 
 	log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
 	repositories {
+		grailsCentral()
 		grailsPlugins()
 		grailsHome()
 
@@ -26,21 +27,20 @@ grails.project.dependency.resolution = {
 
 	dependencies {
 		// specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-		compile(group: 'org.apache.poi', name: 'poi', version: '3.8');
+		compile(group: 'org.apache.poi', name: 'poi', version: '3.12');
 		//xlxs file support
-		compile(group: 'org.apache.poi', name: 'poi-ooxml', version: '3.8') {
+		/*compile(group: 'org.apache.poi', name: 'poi-ooxml', version: '3.12') {
 			excludes 'xmlbeans'
-		}
+		}*/
 		//compile group:'org.apache.poi', name:'poi-contrib', version:'3.7'
 		//compile group:'org.apache.poi', name:'poi-scratchpad', version:'3.7' //ppt, word, visio, outlook support
 	}
 
 	plugins {
-		build ":release:3.0.1"
-		build ":tomcat:7.0.53"
-
-		compile ':hibernate:3.6.10.15' {
-			export = false
-		}
+		build(":release:3.1.0",
+              ":rest-client-builder:2.1.0") {
+            export = false
+        }
+		//build ":tomcat:7.0.53"		
 	}
 }
