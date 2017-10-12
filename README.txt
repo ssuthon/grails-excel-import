@@ -1,3 +1,7 @@
+--To install as Maven Local--
+>> grials compile
+>> grails maven-install
+
 Excel-Import plugin uses Apache POI [http://poi.apache.org/] library (v 3.6) to parse Excel files.  
 
 It's useful for either bootstrapping data, or when you want to allow your users to enter some data using Excel spreadsheets. 
